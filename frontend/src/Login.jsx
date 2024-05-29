@@ -11,7 +11,7 @@ export const Login = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     setloading(true);
-    let { data } = await axios.post(endpoint);
+    let { data } = await axios.post(endpoint+'/');
 
     console.log(endpoint)
 
