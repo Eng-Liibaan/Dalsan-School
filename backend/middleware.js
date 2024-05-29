@@ -40,7 +40,7 @@ const AuthorizationAdmin = (req, res, next) => {
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "public/images")
+        cb(null, "backend/public/images")
     },
     filename: (req, file, cb) => {
         let imagevalidation = file.fieldname + Date.now() + path.extname(file.originalname)
