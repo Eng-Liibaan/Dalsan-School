@@ -21,14 +21,7 @@ const login = require('./routes/login')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json());
 const cors = require('cors')
-app.use(cors())
-app.use('/user', userrouter)
-app.use('/teacher', teacherrouter)
-app.use('/class', classrouter)
-app.use('/exam', examrouter)
-app.use('/student', studentrouter)
-app.use('/receipt', receiptrouter)
-app.use('/', login)
+
 
 
 
@@ -42,12 +35,23 @@ const ConnectedDB = async () => {
 
 }
 
-ConnectedDB()
 
 app.use(express.static(path.join(__dirname,"../frontend/dist")))
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,"../fronted","dist","index.html")) 
+  res.sendFile(path.join(__dirname,"../frontend","dist","index.html")) 
 
 })
+
+app.use(cors())
+
+app.use('/user', userrouter)
+app.use('/teacher', teacherrouter)
+app.use('/class', classrouter)
+app.use('/exam', examrouter)
+app.use('/student', studentrouter)
+app.use('/receipt', receiptrouter)
+app.use('/', login)
+ConnectedDB()
+
 
 app.listen(3000, () => console.log('Connected !'))

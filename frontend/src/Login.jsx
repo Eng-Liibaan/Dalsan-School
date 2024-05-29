@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import { endpoint } from "./api/endpoint";
 import axios from "axios";
 import Cliploader from "react-spinners/ClipLoader";
+import { endpoint } from "./api/endpoint";
 export const Login = () => {
   const [LogIn, setLogIn] = useState({ Email: "", Password: "" });
   const [loading, setloading] = useState(false);
@@ -11,7 +11,11 @@ export const Login = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     setloading(true);
-    let { data } = await axios.post(endpoint, LogIn);
+    let { data } = await axios.post(endpoint);
+
+    console.log(endpoint)
+
+    return
     let User = data.isAdmin === "false";
     if (data.status) {
       localStorage.setItem("access_token", data.access_token);

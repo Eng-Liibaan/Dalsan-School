@@ -1,4 +1,4 @@
-import { Route, Routes, redirect, Navigate } from 'react-router-dom'
+import { Route, Routes,  } from 'react-router-dom'
 import { Change, Login, Register } from './Login'
 import {NotFoundpage} from './Menu/NotFound'
 import './index.css'

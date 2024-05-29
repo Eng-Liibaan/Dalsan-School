@@ -1,10 +1,9 @@
 const { usermodel, uservalidation, loginvalidation } = require('../model/usermodel')
 let jwt = require('jsonwebtoken')
 const { classmodel } = require('../model/classmodel')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const { receiptmodel } = require('../model/receiptmodel')
 let joi = require('joi')
-const { nextTick } = require('process')
 const { studentmodel } = require('../model/studentmodel')
 require('dotenv').config()
 //getuser 

@@ -1,5 +1,5 @@
 
-export const endpoint = "https://student-projects.onrender.com"
+export const endpoint = "http://localhost:3000"
 
 
 
