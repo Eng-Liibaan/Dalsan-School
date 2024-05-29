@@ -11,8 +11,7 @@ export const Login = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     setloading(true);
-    let { data } = await axios.post(endpoint);
-
+    let { data } = await axios.post(endpoint,LogIn);
     let User = data.isAdmin === "false";
     if (data.status) {
       localStorage.setItem("access_token", data.access_token);
